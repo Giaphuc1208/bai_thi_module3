@@ -22,13 +22,19 @@
             <input type="text" class="form-control" placeholder="Nhập tên sản phẩm" name="name" required>
         </div>
         <div class="input-group input-group-sm mb-3 w-25">
-            <input type="text" class="form-control" placeholder="Nhập giá sản phẩm" name="price" required >
+            <input type="number" class="form-control" placeholder="Nhập giá sản phẩm" name="price" required min="100">
         </div>
         <div class="input-group input-group-sm mb-3 w-25">
-            <input type="text" class="form-control" placeholder="Nhập khuyến mãi của sản phẩm" name="discount" required >
+            <label>Khuyến mãi (%):</label>
+            <select name="discount">
+                <option value="5">5%</option>
+                <option value="10">10%</option>
+                <option value="15">15%</option>
+                <option value="20">20%</option>
+            </select>
         </div>
         <div class="input-group input-group-sm mb-3 w-25">
-            <input type="text" class="form-control" placeholder="Nhập số lượng tồn kho" name="stock" required >
+            <input type="number" class="form-control" placeholder="Nhập số lượng tồn kho" name="stock" required min="10">
         </div>
         <button class="btn btn-success">Thêm</button>
         <a href="/product/list" class="btn btn-outline-danger">Hủy</a>

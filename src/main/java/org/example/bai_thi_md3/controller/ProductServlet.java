@@ -31,8 +31,8 @@ public class ProductServlet extends HttpServlet {
         }
     }
 
-    private void showFormCreate(HttpServletRequest req, HttpServletResponse resp) {
-        req.getRequestDispatcher("/views/create.jsp");
+    private void showFormCreate(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+        req.getRequestDispatcher("/views/create.jsp").forward(req,resp);
     }
 
     private void selectAll(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
@@ -56,7 +56,7 @@ public class ProductServlet extends HttpServlet {
     private void createProduct(HttpServletRequest req, HttpServletResponse resp) throws IOException {
         Product product = new Product();
         String name = req.getParameter("name");
-        double price = Double.valueOf(req.getParameter("price"));
+        double price = Double.parseDouble(req.getParameter("price"));
         double discount = Double.parseDouble(req.getParameter("discount"));
         int stock = Integer.parseInt(req.getParameter("stock"));
         product.setName(name);
